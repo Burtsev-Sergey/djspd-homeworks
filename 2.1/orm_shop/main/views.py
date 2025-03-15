@@ -11,13 +11,13 @@ def cars_list_view(request):
 
 
 def car_details_view(request, car_id):
-	try:
-		car = Car.objects.get(pk=car_id)
-		context = {'car': car}
-		template_name = 'main/details.html'
-		return render(request, template_name, context)
-	except Car.DoesNotExist:
-		raise Http404('Car not found')
+    try:
+        car = Car.objects.get(pk=car_id)
+        context = {'car': car}
+        template_name = 'main/details.html'
+        return render(request, template_name, context)
+    except Car.DoesNotExist:
+        raise Http404('Car not found')
 
 
 def sales_by_car(request, car_id):
